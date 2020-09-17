@@ -1,0 +1,68 @@
+body{
+    background-color: beige;
+}
+
+#nav{
+    background-color: teal;
+    
+}
+
+a{
+    color: white;
+    margin: 10px;
+    font-size: large;
+}
+
+#carouselExampleIndicators{
+    margin: 60px;
+}
+
+.button {
+    background-color: rgb(214, 20, 214);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.card{
+    background-color:hsla(120,100%,25%,0.3);
+}
+
+#p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: xx-large;
+}
+h4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+p1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+footer{
+    background-color: teal;
+    height: 300px;
+    margin-top: 60px;
+}
+
+h5{
+    font-size: 100px;
+    margin: 50px;
+}
