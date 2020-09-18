@@ -16,7 +16,7 @@
 
     <nav class="navbar navbar-expand-lg" id="nav">
         <a class="navbar-brand" style="font-size: x-large;">Verte Fashion</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="tbt" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -25,7 +25,7 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shop</a>
+              <a class="nav-link" href="items.html">Shop</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
@@ -96,8 +96,8 @@
           <div class="row">
             <div class="col-md-3">
                 <div class="card">
-                    <img src="popular1.png" style="width:100%">
-                    <div class="container">
+                  <img src="popular1.png" style="width:100%">
+                    <div class="container"></a>
                       <h4><b>GLASSES</b></h4> 
                     </div>
                   </div>
@@ -192,6 +192,34 @@
       </div>
 
 
+      <div class="container">
+        <div class = "box">
+          <img src = "ran.png" alt = "Current Affairs">
+          <button class = "bx">About us</button>
+        </div>
+      </div>
+
+
+
+      <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+
+          <div class="row">
+            <div class="col-md-4 offset-md-5">
+              <img src="1.svg"><br/>
+              <p3>FAST AND FREE DELIVERY</p3>
+            </div>
+            
+          </div>
+          
+            
+          
+        </div>
+      </div>
+      
+      
+      
+
 
 
 
@@ -204,7 +232,6 @@
 
 
       
-
       
       
 
@@ -224,15 +251,15 @@
         
         //button link
         $(document).ready(function(){
-            $("#btn1").click(function(){
-            var url = "http://google.com";
+            $("button").click(function(){
+            var url = "./items.html";
             $(location).attr('href',url);
             });
         });
         
         //buttons hover
         $(document).ready(function(){
-        $("#btn1").hover(function(){
+        $("button").hover(function(){
             $(this).css("background-color", "purple");
         },
         function(){
@@ -251,7 +278,17 @@
             });
         });
         
+
+        //card link
+        $(document).ready(function(){
+            $(".card").click(function(){
+            var url = "./items.html";
+            $(location).attr('href',url);
+            });
+        });
         
+
+       
         
 
 
