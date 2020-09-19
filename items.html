@@ -25,28 +25,129 @@
 
 
 <body>
-    <div class="sidenav">
-        <a href="./index.html">Home</a>
-        <a href="#glasses">Glasses</a>
-        <a href="#watches">Watches</a>
-        <a href="#">Jackets</a>
-        <a href="#">Clothes</a>
-      </div>
-      
-      <!-- Page content -->
-      <div class="main">
-        <a id="glasses">
-            <img src="popular1.png">
-        </a>
-        <a id="watches">
-            <img src="popular2.png">
-        </a>
-      </div>
+    <nav class="navbar navbar-expand-lg" id="nav">
+        <a class="navbar-brand" style="font-size: x-large;">Verte Fashion</a>
+        <button id="tbt" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="items.html">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Blog
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Blog Pictures</a>
+                  <a class="dropdown-item" href="#">Blog Posts</a>
+                  
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+</div>
 
+    <div class="container">
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('glass')">Glasses</button>
+            <button class="btn" onclick="filterSelection('cloth')">Clothes</button>
+            <button class="btn" onclick="filterSelection('watch')">Watches</button>
+          </div>
+          
+         
+          <div class="row">
+            <div class="column cloth">
+              <div class="content">
+                <img src="c1.png" style="width:100%">
+                <button id="bu1" type="button">Buy Now</button> 
+                
+                
+              </div>
+            </div>
+            <div class="column glass">
+              <div class="content">
+                <img src="g1.png" style="width:100%">
+                <button id="bu2" type="button">Buy Now</button> 
+                 
+                
+              </div>
+            </div>
+            <div class="column watch">
+              <div class="content">
+                <img src="w1.png" style="width:100%">
+                <button id="bu" type="button">Buy Now</button> 
+                 
+                
+              </div>
+            </div>
+          
+            
+          
+          </div> 
+    </div>
 
+   
 
+        <script>
+        filterSelection("all") 
+        function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+       
+        for (i = 0; i < x.length; i++) {
+            RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+        }
+        }
 
+       
+        function AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+            }
+        }
+        }
 
+        function RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+        }
+
+        
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+        }
+</script>
 
     
 </body>
